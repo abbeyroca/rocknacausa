@@ -65,6 +65,10 @@
     color: red;
 }
 
+.listitem{
+    font-family: sonoBold;
+}
+
 .imagem{
     padding-bottom: 10px;
     filter: grayscale(100%);
@@ -72,7 +76,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 10px;
 }
 
