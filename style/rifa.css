@@ -1,0 +1,79 @@
+@media only screen and (max-width: 850px) {
+    .imagem {
+        width: 100px;
+        height: 100px;
+    }
+    .nome {
+        font-size: 10px;
+    }
+    .container {
+        width: 100px;
+        height: 100px;
+    }
+    .numero {
+        font-size: 40px;
+    }
+}
+@media only screen and (min-width: 851px) {
+    .imagem {
+        width: 300px;
+        height: 300px;
+    }
+    .nome {
+        font-size: 20px;
+    }
+    .container {
+        width: 300px;
+        height: 300px;
+    }
+    .numero {
+        font-size: 100px;
+    }
+}
+
+
+@font-face {
+    font-family: sonoBold;
+    src: url(./fonts/Sono-Bold.woff2);
+  }
+
+.titulo{
+    font-family: sonoBold;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: red;
+}
+
+.numero {
+    font-family: sonoBold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+}
+
+.nome {
+    font-family: sonoBold;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    color: red;
+}
+
+.imagem{
+    padding-bottom: 10px;
+    filter: grayscale(100%);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 10px;
+}
+
+
