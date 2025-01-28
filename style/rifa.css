@@ -20,6 +20,9 @@
     .listitem{
         font-size: 15px;
     }
+    .titulo{
+        font-size: 30px;
+    }
 }
 @media only screen and (min-width: 851px) {
     .imagem {
@@ -43,6 +46,9 @@
     .listitem{
         font-size: 20px;
     }
+    .titulo{
+        font-size: 50px;
+    }
 }
 
 
@@ -59,7 +65,6 @@
 .titulo{
     font-family: twinMarker;
     text-align: left;
-    font-size: 50px;
 }
 
 .container {
