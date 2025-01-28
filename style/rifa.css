@@ -13,6 +13,9 @@
     .numero {
         font-size: 40px;
     }
+    .listitem{
+        font-size: 15px;
+    }
 }
 @media only screen and (min-width: 851px) {
     .imagem {
@@ -20,7 +23,7 @@
         height: 300px;
     }
     .nome {
-        font-size: 20px;
+        font-size: 40px;
     }
     .container {
         width: 300px;
@@ -28,6 +31,9 @@
     }
     .numero {
         font-size: 100px;
+    }
+    .listitem{
+        font-size: 20px;
     }
 }
 
@@ -37,9 +43,15 @@
     src: url(./fonts/Sono-Bold.woff2);
   }
 
+  @font-face {
+    font-family: twinMarker;
+    src: url(./fonts/TwinMarker.ttf);
+  }
+
 .titulo{
-    font-family: sonoBold;
-    text-align: center;
+    font-family: twinMarker;
+    text-align: left;
+    font-size: 50px;
 }
 
 .container {
@@ -49,7 +61,7 @@
 }
 
 .numero {
-    font-family: sonoBold;
+    font-family: twinMarker;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -58,20 +70,26 @@
 }
 
 .nome {
-    font-family: sonoBold;
+    font-family: twinMarker;
     position: absolute;
     top: 8px;
     left: 16px;
     color: red;
 }
 
-.listitem{
-    font-family: sonoBold;
-}
-
 .imagem{
     padding-bottom: 10px;
     filter: grayscale(100%);
+}
+
+.listitem{
+    font-family: twinMarker;
+}
+
+.instructions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;    
 }
 
 .grid-container {
