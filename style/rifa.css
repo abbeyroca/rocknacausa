@@ -3,6 +3,10 @@
         width: 100px;
         height: 100px;
     }
+    .comprado{
+        width: 100px;
+        height: 100px;
+    }
     .nome {
         font-size: 10px;
     }
@@ -19,6 +23,10 @@
 }
 @media only screen and (min-width: 851px) {
     .imagem {
+        width: 300px;
+        height: 300px;
+    }
+    .comprado {
         width: 300px;
         height: 300px;
     }
@@ -79,8 +87,15 @@
 
 .imagem{
     padding-bottom: 10px;
-    filter: grayscale(100%);
+    filter: grayscale(100%) contrast(1.3);
     object-fit: cover;
+}
+
+.comprado {
+    background-color: red;
+    opacity: 0.35;
+    z-index: 100;
+    position: absolute;
 }
 
 .listitem{

@@ -104,6 +104,8 @@ var hlinks = [
     "https://tse4.mm.bing.net/th?id=OIP.Zh_M0qBesM_FCUHOxIhFHQHaGm&pid=Api"
 ]
 
+var comprados = [3, 10, 20]
+
 function fill() {
     var grid = document.getElementById('grid-container')
     while (grid.firstChild) {
@@ -126,14 +128,21 @@ function createNewImage(i, hlink, name, grid) {
     img.src = hlink;
     img.alt = name;
     img.title = name;
-
+    
     let numero = document.createElement('div');
     numero.className = "numero";
     numero.innerHTML = i+1
-
+    
     let nome = document.createElement('div');
     nome.className = "nome";
     nome.innerHTML = name
+    
+    
+    if(comprados.includes(i+1)) {
+        let comprado = document.createElement('div');
+        comprado.className = "comprado";
+        icontainer.appendChild(comprado)
+    } 
     
     icontainer.appendChild(img);
     icontainer.appendChild(nome);
