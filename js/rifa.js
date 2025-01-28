@@ -40,6 +40,7 @@ var names = [
     "Siouxsie Sioux",
     "Debbie Harris",
     "Ari Up",
+    "Johny Ramone",
     "Paloma McLardy",
     "Hollie Cook",
     "Jimi Hendrix",
@@ -48,7 +49,16 @@ var names = [
     "Exene Cervenka",
     "Patti Smith",
     "Mike Watt",
-    "Keith Morris"
+    "Keith Morris",
+    "Karen Carpenter",
+    "George Benson",
+    "Marky Ramone",
+    "Muddy Waters",
+    "Joni Mitchell",
+    "Lou Reed",
+    "Elliot Smith",
+    "Lora Logic",
+    "Billie Holliday"
 ]
 
 var hlinks = [
@@ -93,6 +103,7 @@ var hlinks = [
     "https://tse3.mm.bing.net/th?id=OIP.bcsjwwHzYQj7HMzvScSj1gHaIy&pid=Api",
     "https://tse1.explicit.bing.net/th?id=OIP.DqEB_r1zTf1DwPnTSgW8mQHaHa&pid=Api",
     "https://tse1.mm.bing.net/th?id=OIP.wdLuFl2IeCSfJvYlygX6oQHaIy&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.6Lonk5tysF9DFKGkRg7a8AHaIZ&pid=Api",
     "https://tse4.mm.bing.net/th?id=OIP.rrHBYhx1CFMaZmfjgbUgswAAAA&pid=Api",
     "https://tse2.mm.bing.net/th?id=OIP.9g86Rl4qGklxrSnJsMCz3gHaHa&pid=Api",
     "https://tse4.mm.bing.net/th?id=OIP.iVxWNZh17gOhsrOZ5Yq8cgHaIj&pid=Api",
@@ -101,7 +112,16 @@ var hlinks = [
     "https://tse3.mm.bing.net/th?id=OIP.kZfYsCNWV91d24Ms1iK5nAHaJQ&pid=Api",
     "https://tse4.mm.bing.net/th?id=OIP.Jy-F8CdvYY6R8rqLfkwrDAHaHa&pid=Api",
     "https://tse2.mm.bing.net/th?id=OIP.5HdUVB8dDRDMvjnzbCIXcgHaHa&pid=Api",
-    "https://tse4.mm.bing.net/th?id=OIP.Zh_M0qBesM_FCUHOxIhFHQHaGm&pid=Api"
+    "https://tse4.mm.bing.net/th?id=OIP.Zh_M0qBesM_FCUHOxIhFHQHaGm&pid=Api",
+    "https://tse1.mm.bing.net/th?id=OIP.A_YLDfDN6bQpiwTliZcfqAHaJO&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.yw30xoZxGEvR07bmcJh6QgHaHa&pid=Api",
+    "https://tse2.mm.bing.net/th?id=OIP.xK5hjkMaaoaKikqQj9hA3AHaHa&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.AUq7oImcv1aRbbGhsqHjyQHaHa&pid=Api",
+    "https://tse2.mm.bing.net/th?id=OIP.qU5uagcbgYuHxayjTQ17DAHaHj&pid=Api",
+    "https://tse3.mm.bing.net/th?id=OIP.jByzthGp-vVBfCHQdgSelwHaHF&pid=Api",
+    "https://tse1.mm.bing.net/th?id=OIP.tFiKUfpxLy8WfoeHjo9PXQHaHa&pid=Api",
+    "https://tse1.mm.bing.net/th?id=OIP.3b76_e2ohVWex50a2l7k8wHaHa&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.mnQY7sFaJCV4X_yXb41i4wHaGY&pid=Api"
 ]
 
 var comprados = [3, 10, 20]
