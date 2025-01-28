@@ -80,6 +80,7 @@
 .imagem{
     padding-bottom: 10px;
     filter: grayscale(100%);
+    object-fit: cover;
 }
 
 .listitem{

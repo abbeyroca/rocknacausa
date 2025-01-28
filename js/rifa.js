@@ -28,7 +28,18 @@ var names = [
     "Courtney Love",
     "Robert Smith",
     "Rachel Gagliardi",
-    "Thourston Moore"
+    "Thourston Moore",
+    "Kate Pierson",
+    "Shannon Selberg",
+    "Åsa Söderqvist",
+    "Arto Lindsay",
+    "Marian Li Pino",
+    "Joe Strummer",
+    "Courtney Barnett",
+    "Lee Ranaldo",
+    "Siouxsie Sioux",
+    "Debbie Harris"
+
 ]
 
 var hlinks = [
@@ -61,7 +72,17 @@ var hlinks = [
     "https://tse4.mm.bing.net/th?id=OIP.sR022N_wu6R0nLyILbSN_AAAAA&pid=Api",
     "https://tse1.mm.bing.net/th?id=OIP.tEYV7kdrrGrCrisDMLfbFwHaHa&pid=Api",
     "https://tse2.mm.bing.net/th?id=OIP.wtpkORE7fDKGseQZquq5DwHaJQ&pid=Api",
-    "https://tse1.mm.bing.net/th?id=OIP.l0z9HpIlfMfrAGE9bEpJmgHaGL&pid=Api"
+    "https://tse1.mm.bing.net/th?id=OIP.l0z9HpIlfMfrAGE9bEpJmgHaGL&pid=Api",
+    "https://tse1.explicit.bing.net/th?id=OIP.hq3ikvwiavmUHBujxTIxOgAAAA&pid=Api",
+    "https://tse1.explicit.bing.net/th?id=OIP.gv5hI5soyKgDjUFmVb_pIAHaH2&pid=Api",
+    "https://tse1.explicit.bing.net/th?id=OIP._3sN5utobrI-RWMcIjmwqwHaHa&pid=Api",
+    "https://tse2.mm.bing.net/th?id=OIP.Jp-alBCevuu7bDgjKkYPOwHaHa&pid=Api",
+    "https://live.staticflickr.com/7038/13911889213_687e8f6a52_b.jpg",
+    "https://tse1.mm.bing.net/th?id=OIP.n_jowQJD_GWBls8Ks2pA7wHaIy&pid=Api",
+    "https://tse3.mm.bing.net/th?id=OIP.TCPoaPVtYKb23FvdMfbTdAHaHa&pid=Api",
+    "https://tse1.mm.bing.net/th?id=OIP.uHhtVnKc4OKVgQ--1sn9PgHaIy&pid=Api",
+    "https://tse3.mm.bing.net/th?id=OIP.bcsjwwHzYQj7HMzvScSj1gHaIy&pid=Api",
+    "https://tse1.explicit.bing.net/th?id=OIP.DqEB_r1zTf1DwPnTSgW8mQHaHa&pid=Api"
 ]
 
 function fill() {
