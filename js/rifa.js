@@ -38,8 +38,17 @@ var names = [
     "Courtney Barnett",
     "Lee Ranaldo",
     "Siouxsie Sioux",
-    "Debbie Harris"
-
+    "Debbie Harris",
+    "Ari Up",
+    "Paloma McLardy",
+    "Hollie Cook",
+    "Jimi Hendrix",
+    "Janis Joplin",
+    "Ian MacKaye",
+    "Exene Cervenka",
+    "Patti Smith",
+    "Mike Watt",
+    "Keith Morris"
 ]
 
 var hlinks = [
@@ -82,7 +91,17 @@ var hlinks = [
     "https://tse3.mm.bing.net/th?id=OIP.TCPoaPVtYKb23FvdMfbTdAHaHa&pid=Api",
     "https://tse1.mm.bing.net/th?id=OIP.uHhtVnKc4OKVgQ--1sn9PgHaIy&pid=Api",
     "https://tse3.mm.bing.net/th?id=OIP.bcsjwwHzYQj7HMzvScSj1gHaIy&pid=Api",
-    "https://tse1.explicit.bing.net/th?id=OIP.DqEB_r1zTf1DwPnTSgW8mQHaHa&pid=Api"
+    "https://tse1.explicit.bing.net/th?id=OIP.DqEB_r1zTf1DwPnTSgW8mQHaHa&pid=Api",
+    "https://tse1.mm.bing.net/th?id=OIP.wdLuFl2IeCSfJvYlygX6oQHaIy&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.rrHBYhx1CFMaZmfjgbUgswAAAA&pid=Api",
+    "https://tse2.mm.bing.net/th?id=OIP.9g86Rl4qGklxrSnJsMCz3gHaHa&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.iVxWNZh17gOhsrOZ5Yq8cgHaIj&pid=Api",
+    "https://tse1.mm.bing.net/th?id=OIP.zwJyNwq90OOuHPqFg1H0JwHaG6&pid=Api",
+    "https://tse3.mm.bing.net/th?id=OIP.1OcvzjbFIGF3PSr5DWw7zAHaJQ&pid=Api",
+    "https://tse3.mm.bing.net/th?id=OIP.kZfYsCNWV91d24Ms1iK5nAHaJQ&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.Jy-F8CdvYY6R8rqLfkwrDAHaHa&pid=Api",
+    "https://tse2.mm.bing.net/th?id=OIP.5HdUVB8dDRDMvjnzbCIXcgHaHa&pid=Api",
+    "https://tse4.mm.bing.net/th?id=OIP.Zh_M0qBesM_FCUHOxIhFHQHaGm&pid=Api"
 ]
 
 function fill() {
