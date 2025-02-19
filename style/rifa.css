@@ -18,10 +18,16 @@
         font-size: 40px;
     }
     .listitem{
-        font-size: 15px;
+        font-size: 3vh;
     }
     .titulo{
-        font-size: 30px;
+        font-size: 5vh;
+    }
+    .titulo2{
+        font-size: 5vh;
+    }
+    .titulo3{
+        font-size: 5vh;
     }
 }
 @media only screen and (min-width: 851px) {
@@ -44,10 +50,16 @@
         font-size: 100px;
     }
     .listitem{
-        font-size: 20px;
+        font-size: 5vh;
     }
     .titulo{
-        font-size: 50px;
+        font-size: 5vh;
+    }
+    .titulo2{
+        font-size: 5vh;
+    }
+    .titulo3{
+        font-size: 5vh;
     }
 }
 
@@ -65,6 +77,19 @@
 .titulo{
     font-family: twinMarker;
     text-align: left;
+    color: red;
+}
+
+.titulo2{
+    font-family: twinMarker;
+    text-align: left;
+    color: darkred;
+}
+
+.titulo3{
+    font-family: twinMarker;
+    text-align: left;
+    color: black;
 }
 
 .container {
@@ -105,11 +130,12 @@
 
 .listitem{
     font-family: twinMarker;
+    margin: 1vh;
 }
 
 .instructions-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding: 10px;    
 }
 
