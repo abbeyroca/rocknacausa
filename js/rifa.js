@@ -1,3 +1,5 @@
+var comprados = []
+
 var names = [
     "Kim Gordon",
     "Rita Lee",
@@ -203,8 +205,6 @@ var hlinks = [
     "https://revista.cifras.com.br/wp-content/uploads/2013/01/5385.245.jpg",
     "https://tse3.mm.bing.net/th?id=OIP.Z69s8Qs0r2grQZ4GtGKxygHaFj&pid=Api",
 ]
-
-var comprados = []
 
 function fill() {
     var grid = document.getElementById('grid-container')
