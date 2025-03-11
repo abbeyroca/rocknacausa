@@ -1,4 +1,4 @@
-var comprados = [7, 33, 35, 65, 68, 85, 94, 99]
+var comprados = [7, 11, 12, 13, 14, 15, 33, 35, 65, 68, 85, 94, 99]
 
 var names = [
     "Kim Gordon",
