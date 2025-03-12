@@ -214,7 +214,6 @@ function fill() {
 
    
     for (let i=0; i<names.length;i++) {
-        console.log(names[i]);
         createNewImage(i, hlinks[i], names[i], grid)
     }
 }
@@ -280,14 +279,14 @@ function pegaComprados() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log(rowData.c[ind].v, " ", ele)
+                console.log("Coluna A ", rowData.c[ind].v, " ", ele)
                 nomes.push(rowData.c[ind].v)
             }    
         })
       })
     })
 
-    console.log(nomes);
+    console.log("Nomes ", nomes);
     var numeros = [];
 
     query = encodeURIComponent("Select B")
@@ -307,14 +306,14 @@ function pegaComprados() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log(rowData.c[ind].v, " ", ele)
+                console.log("Coluna B ", rowData.c[ind].v)
                 numeros.push(rowData.c[ind].v)
             }    
         })
       })
     })
 
-    console.log(numeros)
+    console.log("Numeros ", numeros)
 }
 
 pegaComprados();
