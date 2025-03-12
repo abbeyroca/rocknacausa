@@ -322,7 +322,7 @@ function pegaComprados() {
             candidatos.push(`${nomes[i]} ${numerosPorPessoa[j]}`);
         }
     }
-    let sorteado = parseInt(Math.random()*candidatos.length());
+    let sorteado = parseInt(Math.random()*candidatos.length);
     console.log(candidato[sorteado]);
     // let divSorteado = document.getElementById('div');
     // divSorteado.innerHTML = candidato[sorteado]
