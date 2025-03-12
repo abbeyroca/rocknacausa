@@ -255,8 +255,7 @@ function createNewImage(i, hlink, name, grid) {
 fill();
 
 
-//const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
-const sheetId = "2PACX-1vQxQfRQrwpblDHsTl8k7Q0xH8FAGrsdHcxbnv4Q19lf6OipJ7EjnkW1W37lqDzRjw";
+const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
 const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
 const sheetName = "RIFA SOLIDARIA"
 
