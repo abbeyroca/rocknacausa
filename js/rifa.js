@@ -289,6 +289,8 @@ function sorteio() {
     var nomes = pegaColuna(encodeURIComponent("Select A"));
     var numeros = pegaColuna(encodeURIComponent("Select B"));
     var candidatos = [];
+    console.log("len nomes", nomes.length);
+    console.log("len numeros", numeros.length);
     for (var i = 0; i < nomes.length; i++) {
         console.log("nome ", nomes[i]);
         const numerosPorPessoa = numeros[i].split(";");
