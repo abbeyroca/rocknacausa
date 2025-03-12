@@ -276,7 +276,7 @@ function pegaColuna(query) {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log(query, rowData.c[ind].v, " ", ele);
+                console.log(query, rowData.c[ind].v);
                 coluna.push(rowData.c[ind].v);
             }    
         })
@@ -290,8 +290,10 @@ function sorteio() {
     var numeros = pegaColuna(encodeURIComponent("Select B"));
     var candidatos = [];
     for (var i = 0; i < nomes.length; i++) {
+        console.log("nome ", nomes[i]);
         const numerosPorPessoa = numeros[i].split(";");
         for (var j = 0; j < numerosPorPessoa.length; j++) {
+            console.log("numero por pessoa", numerosPorPessoa[j];
             let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
             console.log("Candidato", candidato);
             candidatos.push(candidato);
