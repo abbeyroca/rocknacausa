@@ -293,7 +293,7 @@ function sorteio() {
         console.log("nome ", nomes[i]);
         const numerosPorPessoa = numeros[i].split(";");
         for (var j = 0; j < numerosPorPessoa.length; j++) {
-            console.log("numero por pessoa", numerosPorPessoa[j];
+            console.log("numero por pessoa", numerosPorPessoa[j]);
             let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
             console.log("Candidato", candidato);
             candidatos.push(candidato);
