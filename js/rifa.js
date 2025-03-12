@@ -259,7 +259,7 @@ function pegaColuna(query) {
     const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
     const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
     const sheetName = "RIFA SOLIDARIA";
-    var url = `${base}&sheet=${sheetName}&tq=${query}`;
+    var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent(query)}`;
     var coluna = [];
     fetch(url)
     .then(res => res.text())
@@ -276,18 +276,19 @@ function pegaColuna(query) {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log(query, rowData.c[ind].v);
                 coluna.push(rowData.c[ind].v);
+                console.log(query, rowData.c[ind].v);
             }    
         })
       })
     })
+    console.log("coluna", coluna);
     return coluna;
 }
 
 function sorteio() {
-    var nomes = pegaColuna(encodeURIComponent("Select A"));
-    var numeros = pegaColuna(encodeURIComponent("Select B"));
+    var nomes = pegaColuna("Select A");
+    var numeros = pegaColuna("Select B");
     var candidatos = [];
     console.log("len nomes", nomes.length);
     console.log("len numeros", numeros.length);
