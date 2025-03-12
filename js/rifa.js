@@ -323,7 +323,7 @@ function pegaComprados() {
         }
     }
     let sorteado = parseInt(Math.random()*candidatos.length);
-    console.log(candidato[sorteado]);
+    console.log(candidatos[sorteado]);
     // let divSorteado = document.getElementById('div');
     // divSorteado.innerHTML = candidato[sorteado]
 }
