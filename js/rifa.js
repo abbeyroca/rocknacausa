@@ -319,10 +319,13 @@ function pegaComprados() {
     for (var i = 0; i < nomes.length; i++) {
         const numerosPorPessoa = numeros[i].split(";");
         for (var j = 0; j < numerosPorPessoa.length; j++) {
-            candidatos.push(`${nomes[i]} ${numerosPorPessoa[j]}`);
+            let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
+            console.log(candidato);
+            candidatos.push(candidato);
         }
     }
     let sorteado = parseInt(Math.random()*candidatos.length);
+    console.log(sorteado)
     console.log(candidatos[sorteado]);
     // let divSorteado = document.getElementById('div');
     // divSorteado.innerHTML = candidato[sorteado]
