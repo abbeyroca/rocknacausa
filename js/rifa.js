@@ -255,15 +255,12 @@ function createNewImage(i, hlink, name, grid) {
 fill();
 
 
-const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
-const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
-const sheetName = "RIFA SOLIDARIA";
-
-
-function pegaComprados() {
-    var query = encodeURIComponent("Select A");
+function pegaColuna(query) {
+    const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
+    const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
+    const sheetName = "RIFA SOLIDARIA";
     var url = `${base}&sheet=${sheetName}&tq=${query}`;
-    var nomes = [];
+    var coluna = [];
     fetch(url)
     .then(res => res.text())
     .then(rep => {
@@ -279,42 +276,18 @@ function pegaComprados() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log("Coluna A ", rowData.c[ind].v, " ", ele);
-                nomes.push(rowData.c[ind]);
+                console.log(query, rowData.c[ind].v, " ", ele);
+                coluna.push(rowData.c[ind].v);
             }    
         })
       })
     })
+    return coluna;
+}
 
-    console.log("Nomes ", nomes);
-    var numeros = [];
-
-    query = encodeURIComponent("Select B")
-    url = `${base}&sheet=${sheetName}&tq=${query}`
-    fetch(url)
-    .then(res => res.text())
-    .then(rep => {
-        // Desconsidera textos adicionais e extrai so JSON
-        let jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-        let colz = [];
-        // Extrai o nome das colunas
-        jsonData.table.cols.forEach((heading) => {
-            let column = heading.label;
-            colz.push(column);
-        })
-        //Extrai dados das linhas
-        jsonData.table.rows.forEach((rowData) => {
-            colz.forEach((ele, ind) => {
-            if (rowData.c[ind] != null) {
-                console.log("Coluna B ", rowData.c[ind]);
-                numeros.push(rowData.c[ind].v);
-            }    
-        })
-      })
-    })
-
-    console.log("Numeros ", numeros);
-    
+function sorteio() {
+    var nomes = pegaColuna(encodeURIComponent("Select A"));
+    var numeros = pegaColuna(encodeURIComponent("Select B"));
     var candidatos = [];
     for (var i = 0; i < nomes.length; i++) {
         const numerosPorPessoa = numeros[i].split(";");
@@ -327,8 +300,5 @@ function pegaComprados() {
     let sorteado = parseInt(Math.random()*candidatos.length);
     console.log("Sorteado", sorteado)
     console.log("Candidato sorteado", candidatos[sorteado]);
-    // let divSorteado = document.getElementById('div');
-    // divSorteado.innerHTML = candidato[sorteado]
 }
 
-pegaComprados();
