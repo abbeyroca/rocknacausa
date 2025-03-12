@@ -253,4 +253,38 @@ function createNewImage(i, hlink, name, grid) {
     grid.appendChild(icontainer);
 }
 
-fill()
+fill();
+
+
+const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
+const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
+const sheetName = "RIFA SOLIDARIA"
+
+function pegaComprados() {
+    const query = encodeURIComponent("Select A,B")
+    const url = `${base}&sheet=${sheetName}&tq=${query}`
+    var numerosComprados = [];
+    fetch(url)
+    .then(res => res.text())
+    .then(rep => {
+        // Desconsidera textos adicionais e extrai so JSON
+        let jsonData = JSON.parse(rep.substring(47).slice(0, -2))
+        var colz = [];
+        // Extrai o nome das colunas
+        jsonData.table.cols.forEach((heading) => {
+            let column = heading.label;
+            colz.push(column)
+        })
+        //Extrai dados das linhas
+        jsonData.table.rows.forEach((rowData) => {
+            colz.forEach((ele, ind) => {
+            if (rowData.c[ind] != null) {
+                console.log(rowData.c[ind].v)
+            }    
+        })
+      })
+    })
+    return numerosComprados
+}
+
+pegaComprados();
