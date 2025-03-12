@@ -281,7 +281,7 @@ function pegaComprados() {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
                 console.log("Coluna A ", rowData.c[ind].v, " ", ele)
-                nomes.push(rowData.c[ind].v)
+                nomes.push(rowData.c[ind])
             }    
         })
       })
@@ -307,7 +307,7 @@ function pegaComprados() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log("Coluna B ", rowData.c[ind].v)
+                console.log("Coluna B ", rowData.c[ind])
                 numeros.push(rowData.c[ind].v)
             }    
         })
