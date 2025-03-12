@@ -320,13 +320,13 @@ function pegaComprados() {
         const numerosPorPessoa = numeros[i].split(";");
         for (var j = 0; j < numerosPorPessoa.length; j++) {
             let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
-            console.log(candidato);
+            console.log("Candidato", candidato);
             candidatos.push(candidato);
         }
     }
     let sorteado = parseInt(Math.random()*candidatos.length);
-    console.log(sorteado)
-    console.log(candidatos[sorteado]);
+    console.log("Sorteado", sorteado)
+    console.log("Candidato sorteado", candidatos[sorteado]);
     // let divSorteado = document.getElementById('div');
     // divSorteado.innerHTML = candidato[sorteado]
 }
