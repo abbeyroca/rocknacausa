@@ -207,14 +207,14 @@ var hlinks = [
 ]
 
 function fill() {
-    var grid = document.getElementById('grid-container')
+    var grid = document.getElementById('grid-container');
     while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
     }
 
    
     for (let i=0; i<names.length;i++) {
-        createNewImage(i, hlinks[i], names[i], grid)
+        createNewImage(i, hlinks[i], names[i], grid);
     }
 }
 
@@ -230,23 +230,23 @@ function createNewImage(i, hlink, name, grid) {
     
     let numero = document.createElement('div');
     numero.className = "numero";
-    numero.innerHTML = i+1
+    numero.innerHTML = i+1;
     
     let nome = document.createElement('div');
     nome.className = "nome";
-    nome.innerHTML = name
+    nome.innerHTML = name;
     
     
     if(comprados.includes(i+1)) {
         let comprado = document.createElement('div');
         comprado.className = "comprado";
-        icontainer.appendChild(comprado)
-        nome.innerHTML = "Comprado"
+        icontainer.appendChild(comprado);
+        nome.innerHTML = "Comprado";
     } 
 
     
     icontainer.appendChild(img);
-    icontainer.appendChild(nome)
+    icontainer.appendChild(nome);
     icontainer.appendChild(numero);
     
     grid.appendChild(icontainer);
@@ -256,13 +256,13 @@ fill();
 
 
 const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
-const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
-const sheetName = "RIFA SOLIDARIA"
+const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
+const sheetName = "RIFA SOLIDARIA";
 
 
 function pegaComprados() {
-    var query = encodeURIComponent("Select A")
-    var url = `${base}&sheet=${sheetName}&tq=${query}`
+    var query = encodeURIComponent("Select A");
+    var url = `${base}&sheet=${sheetName}&tq=${query}`;
     var nomes = [];
     fetch(url)
     .then(res => res.text())
@@ -273,14 +273,14 @@ function pegaComprados() {
         // Extrai o nome das colunas
         jsonData.table.cols.forEach((heading) => {
             let column = heading.label;
-            colz.push(column)
+            colz.push(column);
         })
         //Extrai dados das linhas
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log("Coluna A ", rowData.c[ind].v, " ", ele)
-                nomes.push(rowData.c[ind])
+                console.log("Coluna A ", rowData.c[ind].v, " ", ele);
+                nomes.push(rowData.c[ind]);
             }    
         })
       })
@@ -295,25 +295,37 @@ function pegaComprados() {
     .then(res => res.text())
     .then(rep => {
         // Desconsidera textos adicionais e extrai so JSON
-        let jsonData = JSON.parse(rep.substring(47).slice(0, -2))
+        let jsonData = JSON.parse(rep.substring(47).slice(0, -2));
         let colz = [];
         // Extrai o nome das colunas
         jsonData.table.cols.forEach((heading) => {
             let column = heading.label;
-            colz.push(column)
+            colz.push(column);
         })
         //Extrai dados das linhas
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log("Coluna B ", rowData.c[ind])
-                numeros.push(rowData.c[ind].v)
+                console.log("Coluna B ", rowData.c[ind]);
+                numeros.push(rowData.c[ind].v);
             }    
         })
       })
     })
 
-    console.log("Numeros ", numeros)
+    console.log("Numeros ", numeros);
+    
+    var candidatos = [];
+    for (var i = 0; i < nomes.length; i++) {
+        const numerosPorPessoa = numeros[i].split(";");
+        for (var j = 0; j < numerosPorPessoa.length; j++) {
+            candidatos.push(`${nomes[i]} ${numerosPorPessoa[j]}`);
+        }
+    }
+    let sorteado = parseInt(Math.random()*candidatos.length());
+    console.log(candidato[sorteado]);
+    // let divSorteado = document.getElementById('div');
+    // divSorteado.innerHTML = candidato[sorteado]
 }
 
 pegaComprados();
