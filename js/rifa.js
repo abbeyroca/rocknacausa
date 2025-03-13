@@ -284,8 +284,7 @@ function pegaColuna(query) {
         })
       })
     })
-    await sleep(10000);
-    
+    sleep(10000);
     console.log("coluna", coluna);
     return coluna;
 }
