@@ -263,11 +263,11 @@ function pegaColuna(query) {
     var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent(query)}`;
     var coluna = [];
 
-    let fetchDataFromAPI = async (url) => {
-        let response = await fetch(url);
-        let results = await response.json();
-        console.log("Results", results)
-        let jsonData = JSON.parse(results)
+    fetch(url)
+    .then(res => res.text())
+    .then(rep => {
+        // Desconsidera textos adicionais e extrai so JSON
+        let jsonData = JSON.parse(rep.substring(47).slice(0, -2))
         let colz = [];
         // Extrai o nome das colunas
         jsonData.table.cols.forEach((heading) => {
@@ -278,13 +278,14 @@ function pegaColuna(query) {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                coluna.push(rowData.c[ind].v);
                 console.log(query, rowData.c[ind].v);
+                coluna.push(rowData.c[ind].v);
             }    
         })
       })
-    }
-    fetchDataFromAPI();
+    })
+    await new Promise(r => setTimeout(r, 10000));
+    
     console.log("coluna", coluna);
     return coluna;
 }
