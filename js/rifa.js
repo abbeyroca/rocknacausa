@@ -284,7 +284,7 @@ function sorteio() {
             }    
         })
       })
-      fill(numeros)
+      var comprados = [];
       var candidatos = [];
       console.log("len nomes", nomes.length);
       console.log("len numeros", numeros.length);
@@ -295,11 +295,13 @@ function sorteio() {
               for (var j = 0; j < numerosPorPessoa.length; j++) {
                   console.log("numero por pessoa", numerosPorPessoa[j]);
                   let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
+                  comprados.push(Number(numerosPorPessoa[j]));
                   console.log("Candidato", candidato);
                   candidatos.push(candidato);
               }
           }
       }
+      fill(comprados)
       let sorteado = parseInt(Math.random()*candidatos.length);
       console.log("Sorteado", sorteado)
       console.log("Candidato sorteado", candidatos[sorteado]);
