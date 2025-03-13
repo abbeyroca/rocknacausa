@@ -284,10 +284,14 @@ function pegaColuna(query) {
         })
       })
     })
-    await new Promise(r => setTimeout(r, 10000));
+    await sleep(10000);
     
     console.log("coluna", coluna);
     return coluna;
+}
+
+function sleep(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 function sorteio() {
