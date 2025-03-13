@@ -260,31 +260,7 @@ function sorteio() {
     const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
     const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
     const sheetName = "RIFA SOLIDARIA";
-    var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select A")}`;
-    var nomes = [];
-    fetch(url)
-    .then(res => res.text())
-    .then(rep => {
-        // Desconsidera textos adicionais e extrai so JSON
-        let jsonData = JSON.parse(rep.substring(47).slice(0, -2))
-        let colz = [];
-        // Extrai o nome das colunas
-        jsonData.table.cols.forEach((heading) => {
-            let column = heading.label;
-            colz.push(column);
-        })
-        //Extrai dados das linhas
-        jsonData.table.rows.forEach((rowData) => {
-            colz.forEach((ele, ind) => {
-            if (rowData.c[ind] != null) {
-                console.log("Select A", rowData.c[ind].v);
-                nomes.push(rowData.c[ind].v);
-            }    
-        })
-      })
-    })
-
-    url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select B")}`;
+    var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select A, B")}`;
     var numeros = [];
     fetch(url)
     .then(res => res.text())
@@ -301,28 +277,27 @@ function sorteio() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log("Select B", rowData.c[ind].v);
+                console.log("Select A, B", rowData.c[ind].v, ind);
                 numeros.push(rowData.c[ind].v);
             }    
         })
       })
+      var candidatos = [];
+      console.log("len nomes", nomes.length);
+      console.log("len numeros", numeros.length);
+      for (var i = 0; i < nomes.length; i++) {
+          console.log("nome ", nomes[i]);
+          const numerosPorPessoa = numeros[i].split(";");
+          for (var j = 0; j < numerosPorPessoa.length; j++) {
+              console.log("numero por pessoa", numerosPorPessoa[j]);
+              let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
+              console.log("Candidato", candidato);
+              candidatos.push(candidato);
+          }
+      }
+      let sorteado = parseInt(Math.random()*candidatos.length);
+      console.log("Sorteado", sorteado)
+      console.log("Candidato sorteado", candidatos[sorteado]);
     })
-
-    var candidatos = [];
-    console.log("len nomes", nomes.length);
-    console.log("len numeros", numeros.length);
-    for (var i = 0; i < nomes.length; i++) {
-        console.log("nome ", nomes[i]);
-        const numerosPorPessoa = numeros[i].split(";");
-        for (var j = 0; j < numerosPorPessoa.length; j++) {
-            console.log("numero por pessoa", numerosPorPessoa[j]);
-            let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
-            console.log("Candidato", candidato);
-            candidatos.push(candidato);
-        }
-    }
-    let sorteado = parseInt(Math.random()*candidatos.length);
-    console.log("Sorteado", sorteado)
-    console.log("Candidato sorteado", candidatos[sorteado]);
 }
 
