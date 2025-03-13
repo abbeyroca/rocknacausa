@@ -296,6 +296,11 @@ function sleep(time) {
 function sorteio() {
     var nomes = pegaColuna("Select A");
     var numeros = pegaColuna("Select B");
+    while (nomes.length == 0 || numeros.length == 0) {
+        nomes = pegaColuna("Select A");
+        numeros = pegaColuna("Select B");
+    }
+
     var candidatos = [];
     console.log("len nomes", nomes.length);
     console.log("len numeros", numeros.length);
