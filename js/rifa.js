@@ -277,7 +277,7 @@ function sorteio() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log(query, rowData.c[ind].v);
+                console.log("Select A", rowData.c[ind].v);
                 nomes.push(rowData.c[ind].v);
             }    
         })
@@ -301,7 +301,7 @@ function sorteio() {
         jsonData.table.rows.forEach((rowData) => {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
-                console.log(query, rowData.c[ind].v);
+                console.log("Select B", rowData.c[ind].v);
                 numeros.push(rowData.c[ind].v);
             }    
         })
