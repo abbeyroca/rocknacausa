@@ -255,14 +255,13 @@ function createNewImage(i, hlink, name, grid) {
 fill();
 
 
-function pegaColuna(query) {
-    console.log("======================== PEGA COLUNA ========================")
+function sorteio() {
+    console.log("======================== PEGA NOMES ========================")
     const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
     const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
     const sheetName = "RIFA SOLIDARIA";
-    var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent(query)}`;
-    var coluna = [];
-
+    var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select A")}`;
+    var nomes = [];
     fetch(url)
     .then(res => res.text())
     .then(rep => {
@@ -279,27 +278,35 @@ function pegaColuna(query) {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
                 console.log(query, rowData.c[ind].v);
-                coluna.push(rowData.c[ind].v);
+                nomes.push(rowData.c[ind].v);
             }    
         })
       })
     })
-    sleep(10000);
-    console.log("coluna", coluna);
-    return coluna;
-}
 
-function sleep(time) {
-    return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-function sorteio() {
-    var nomes = pegaColuna("Select A");
-    var numeros = pegaColuna("Select B");
-    while (nomes.length == 0 || numeros.length == 0) {
-        nomes = pegaColuna("Select A");
-        numeros = pegaColuna("Select B");
-    }
+    url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select B")}`;
+    var numeros = [];
+    fetch(url)
+    .then(res => res.text())
+    .then(rep => {
+        // Desconsidera textos adicionais e extrai so JSON
+        let jsonData = JSON.parse(rep.substring(47).slice(0, -2))
+        let colz = [];
+        // Extrai o nome das colunas
+        jsonData.table.cols.forEach((heading) => {
+            let column = heading.label;
+            colz.push(column);
+        })
+        //Extrai dados das linhas
+        jsonData.table.rows.forEach((rowData) => {
+            colz.forEach((ele, ind) => {
+            if (rowData.c[ind] != null) {
+                console.log(query, rowData.c[ind].v);
+                numeros.push(rowData.c[ind].v);
+            }    
+        })
+      })
+    })
 
     var candidatos = [];
     console.log("len nomes", nomes.length);
