@@ -284,7 +284,7 @@ function pegaColuna(query) {
         })
       })
     }
-    
+    fetchDataFromAPI();
     console.log("coluna", coluna);
     return coluna;
 }
