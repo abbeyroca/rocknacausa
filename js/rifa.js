@@ -261,11 +261,12 @@ function pegaColuna(query) {
     const sheetName = "RIFA SOLIDARIA";
     var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent(query)}`;
     var coluna = [];
-    fetch(url)
-    .then(res => res.text())
-    .then(rep => {
-        // Desconsidera textos adicionais e extrai so JSON
-        let jsonData = JSON.parse(rep.substring(47).slice(0, -2))
+
+    let fetchDataFromAPI = async (url) => {
+        let res = await fetch(url);
+        let rep = await res.json();
+                // Desconsidera textos adicionais e extrai so JSON
+        let jsonData = JSON.parse(rep)
         let colz = [];
         // Extrai o nome das colunas
         jsonData.table.cols.forEach((heading) => {
@@ -281,7 +282,8 @@ function pegaColuna(query) {
             }    
         })
       })
-    })
+    }
+    
     console.log("coluna", coluna);
     return coluna;
 }
