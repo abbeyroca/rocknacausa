@@ -256,6 +256,7 @@ fill();
 
 
 function pegaColuna(query) {
+    console.log("======================== PEGA COLUNA ========================")
     const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
     const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
     const sheetName = "RIFA SOLIDARIA";
@@ -265,7 +266,7 @@ function pegaColuna(query) {
     let fetchDataFromAPI = async (url) => {
         let response = await fetch(url);
         let results = await response.json();
-        console.log(results)
+        console.log("Results", results)
         let jsonData = JSON.parse(results)
         let colz = [];
         // Extrai o nome das colunas
