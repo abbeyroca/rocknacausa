@@ -292,12 +292,14 @@ function sorteio() {
       console.log("len numeros", numeros.length);
       for (var i = 0; i < nomes.length; i++) {
           console.log("nome ", nomes[i]);
-          const numerosPorPessoa = numeros[i].split(";");
-          for (var j = 0; j < numerosPorPessoa.length; j++) {
-              console.log("numero por pessoa", numerosPorPessoa[j]);
-              let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
-              console.log("Candidato", candidato);
-              candidatos.push(candidato);
+          if (numeros[i] != null) {
+              const numerosPorPessoa = numeros[i].split(";");
+              for (var j = 0; j < numerosPorPessoa.length; j++) {
+                  console.log("numero por pessoa", numerosPorPessoa[j]);
+                  let candidato = `${nomes[i]} ${numerosPorPessoa[j]}`;
+                  console.log("Candidato", candidato);
+                  candidatos.push(candidato);
+              }
           }
       }
       let sorteado = parseInt(Math.random()*candidatos.length);
