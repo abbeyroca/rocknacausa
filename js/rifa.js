@@ -263,10 +263,10 @@ function pegaColuna(query) {
     var coluna = [];
 
     let fetchDataFromAPI = async (url) => {
-        let res = await fetch(url);
-        let rep = await res.json();
-                // Desconsidera textos adicionais e extrai so JSON
-        let jsonData = JSON.parse(rep)
+        let response = await fetch(url);
+        let results = await response.json();
+        console.log(results)
+        let jsonData = JSON.parse(results)
         let colz = [];
         // Extrai o nome das colunas
         jsonData.table.cols.forEach((heading) => {
