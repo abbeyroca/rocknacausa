@@ -262,6 +262,7 @@ function sorteio() {
     const sheetName = "RIFA SOLIDARIA";
     var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select A, B")}`;
     var numeros = [];
+    var nomes = [];
     fetch(url)
     .then(res => res.text())
     .then(rep => {
@@ -278,7 +279,11 @@ function sorteio() {
             colz.forEach((ele, ind) => {
             if (rowData.c[ind] != null) {
                 console.log("Select A, B", rowData.c[ind].v, ind);
-                numeros.push(rowData.c[ind].v);
+                if (ind == 0) {
+                    nomes.push(rowData.c[ind].v)
+                } else {
+                    numeros.push(rowData.c[ind].v);
+                }
             }    
         })
       })
