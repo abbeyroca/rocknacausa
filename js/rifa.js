@@ -1,4 +1,4 @@
-var comprados = [2, 3, 4, 6, 7, 11, 12, 13, 14, 15, 18, 20, 21, 25, 32, 33, 35, 36, 41, 49, 51, 53, 61, 65, 66,  68, 72, 85, 88, 89, 93, 94, 98, 99]
+// var comprados = [2, 3, 4, 6, 7, 11, 12, 13, 14, 15, 18, 20, 21, 25, 32, 33, 35, 36, 41, 49, 51, 53, 61, 65, 66,  68, 72, 85, 88, 89, 93, 94, 98, 99]
 
 var names = [
     "Kim Gordon",
@@ -206,7 +206,7 @@ var hlinks = [
     "https://tse3.mm.bing.net/th?id=OIP.Z69s8Qs0r2grQZ4GtGKxygHaFj&pid=Api",
 ]
 
-function fill() {
+function fill(comprados) {
     var grid = document.getElementById('grid-container');
     while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
@@ -214,11 +214,11 @@ function fill() {
 
    
     for (let i=0; i<names.length;i++) {
-        createNewImage(i, hlinks[i], names[i], grid);
+        createNewImage(i, hlinks[i], names[i], grid, comprados);
     }
 }
 
-function createNewImage(i, hlink, name, grid) {
+function createNewImage(i, hlink, name, grid, comprados) {
     let icontainer = document.createElement('div');
     icontainer.className = "container";
 
@@ -252,7 +252,7 @@ function createNewImage(i, hlink, name, grid) {
     grid.appendChild(icontainer);
 }
 
-fill();
+sorteio();
 
 
 function sorteio() {
@@ -287,6 +287,7 @@ function sorteio() {
             }    
         })
       })
+      fill(comprados)
       var candidatos = [];
       console.log("len nomes", nomes.length);
       console.log("len numeros", numeros.length);
