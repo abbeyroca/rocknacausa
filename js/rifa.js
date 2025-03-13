@@ -252,9 +252,6 @@ function createNewImage(i, hlink, name, grid, comprados) {
     grid.appendChild(icontainer);
 }
 
-sorteio();
-
-
 function sorteio() {
     console.log("======================== PEGA NOMES ========================")
     const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
@@ -287,7 +284,7 @@ function sorteio() {
             }    
         })
       })
-      fill(comprados)
+      fill(numeros)
       var candidatos = [];
       console.log("len nomes", nomes.length);
       console.log("len numeros", numeros.length);
@@ -309,3 +306,4 @@ function sorteio() {
     })
 }
 
+sorteio();
