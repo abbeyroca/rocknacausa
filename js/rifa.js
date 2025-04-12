@@ -306,8 +306,6 @@ function sorteio() {
     })
 }
 
-pegaComprados();
-
 
 function sortear() {
     var sorteados = document.getElementById("sorteados")
