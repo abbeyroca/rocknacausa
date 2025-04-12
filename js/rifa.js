@@ -306,9 +306,6 @@ function sorteio() {
     })
 }
 
-<<<<<<< HEAD
-sorteio();
-=======
 pegaComprados();
 
 
@@ -350,4 +347,3 @@ function sortear() {
   }
   
   
->>>>>>> 02e6fc7 (:hankey: teste com sorteio)
