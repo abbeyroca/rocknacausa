@@ -250,13 +250,14 @@ function createNewImage(i, hlink, name, grid, comprados) {
     grid.appendChild(icontainer);
 }
 
-const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
-const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
-const sheetName = "RIFA SOLIDARIA";
+
 
 
 function sorteio() {
-    console.log("======================== PEGA NOMES ========================")
+    console.log("======================== PEGA NOMES ========================")    
+    const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
+    const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
+    const sheetName = "RIFA SOLIDARIA";
     var url = `${base}&sheet=${sheetName}&tq=${encodeURIComponent("Select A, B")}`;
     var numeros = [];
     var nomes = [];
@@ -310,6 +311,9 @@ function sorteio() {
 
 
 function sortear() {
+    const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
+    const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
+    const sheetName = "RIFA SOLIDARIA";
     var sorteados = document.getElementById("sorteados")
     
     let names = [];
