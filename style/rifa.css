@@ -151,14 +151,14 @@
     grid-column: 1 / span 8;
     grid-row: 49 / span 1;
     font-family: sonoBold;
-    color: teal;
+    color: black;
 }
 
 .sortear {
     grid-column: 4 / span 2;
     grid-row: 45 / span 1;
     appearance: button;
-    background-color: #1899D6;
+    background-color: darkred;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -189,7 +189,7 @@
 
 .sortear:after {
     background-clip: padding-box;
-    background-color: #1CB0F6;
+    background-color: red;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
