@@ -251,10 +251,8 @@ function createNewImage(i, hlink, name, grid, comprados) {
 }
 
 
-
-
 function sorteio() {
-    console.log("======================== PEGA NOMES ========================")    
+    console.log("======================== PEGA NOMES ========================")
     const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
     const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
     const sheetName = "RIFA SOLIDARIA";
@@ -309,45 +307,4 @@ function sorteio() {
     })
 }
 
-
-function sortear() {
-    const sheetId = "1k0_5lvTkX-u6FiG4jdNweVmse7kewzOH";
-    const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;;
-    const sheetName = "RIFA SOLIDARIA";
-    var sorteados = document.getElementById("sorteados")
-    
-    let names = [];
-    const query = encodeURIComponent("Select B")
-    const url = `${base}&sheet=${sheetName}&tq=${query}`
-    console.log("Sortear!!!" + url)
-  
-    fetch(url)
-    .then(res => res.text())
-    .then(rep => {
-      console.log(rep)
-      //Apaga textos adicionais e extrai so o JSON:
-      const jsonData = JSON.parse(rep.substring(47).slice(0, -2));
-      const colz = [];
-      //Extrai nome das colunas
-      jsonData.table.cols.forEach((heading) => {
-        let column = heading.label;
-          colz.push(column);                  
-        })
-      //Extrai dados das linhas
-      jsonData.table.rows.forEach((rowData) => {
-          colz.forEach((ele, ind) => {
-              if (rowData.c[ind] != null) {
-                names.push(rowData.c[ind].v);
-                console.log("Names " + rowData.c[ind].v)
-             } 
-          })
-      })
-      let rand = Math.random()
-      let len = names.length * 1.0
-      let indice_sorteado = Math.floor(rand*len)
-      let sorteado = names[indice_sorteado]
-      sorteados.innerHTML += sorteado+"\n"
-    })
-  }
-  
-  
+sorteio();
