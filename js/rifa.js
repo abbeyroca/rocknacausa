@@ -304,7 +304,9 @@ function sorteio() {
       let sorteado = parseInt(Math.random()*candidatos.length);
       console.log("Sorteado", sorteado)
       console.log("Candidato sorteado", candidatos[sorteado]);
+      var sorteados = document.getElementById('sorteados');
+      sorteados.innerHTML += candidatos[sorteado]
+      sorteados.innerHTML += "\n"
+
     })
 }
-
-sorteio();
